@@ -4,5 +4,5 @@ from .models import Post
 
 # Create your views here.
 
-class Feed(generic.ListView):
+class PostList(generic.ListView):
     model = Post
