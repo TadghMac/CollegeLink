@@ -1,7 +1,7 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
-
+from django_summernote.fields import SummernoteTextField
 
 
 class Blog(models.Model):
@@ -17,7 +17,7 @@ class UserProfile(models.Model):
 # Modify the Post and Comment models to use the User model or UserProfile model
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
-    content = models.TextField()
+    content = SummernoteTextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     class Meta:
