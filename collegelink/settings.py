@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'collegelink',
+    'collegelink',   
     'blog',
 ]
 

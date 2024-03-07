@@ -4,10 +4,6 @@ from django.contrib.auth.models import User
 
 
 
-class Blog(models.Model):
-    title = models.CharField(max_length=100)
-    content = models.TextField()
-    image = CloudinaryField('image', default='placeholder')
 
 class User(models.Model):
     first_name = models.CharField(max_length=100, unique=True)
