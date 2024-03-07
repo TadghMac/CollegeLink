@@ -2,8 +2,11 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
+
+
 class Blog(models.Model):
     title = models.CharField(max_length=100)
+    content = models.TextField()
     image = CloudinaryField('image', default='placeholder')
 
 class User(models.Model):
