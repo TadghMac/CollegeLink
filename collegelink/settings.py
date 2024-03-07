@@ -35,7 +35,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'collegelink'
+    'collegelink',
+    'blog',
 ]
 
 SITE_ID = 1
