@@ -1,9 +1,14 @@
 from django.contrib import admin
-from .models import Blog
-from .models import Comment
-from .models import Post
+from .models import Blog, Comment, Post
 
-# Register your models here.
-admin.site.register(Blog)
-admin.site.register(Comment)
-admin.site.register(Post)
+@admin.register(Blog)
+class BlogAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('author',)
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    pass

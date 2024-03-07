@@ -15,6 +15,7 @@ class User(models.Model):
     email = models.EmailField(max_length=150, unique=True)
     password = models.CharField(max_length=10, unique=True)
     # Do we need a model for a profile?
+
 class Post(models.Model):
     author = models.ForeignKey(
     User, on_delete=models.CASCADE, related_name="posts"
@@ -24,6 +25,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     class Meta:
         ordering = ["-created_on"]
+
 class Activity(models.Model):
     author = models.ForeignKey(
     User, on_delete=models.CASCADE, related_name="activity"
@@ -32,6 +34,7 @@ class Activity(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     type = models.IntegerField()
+    
 class Comment(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="user_comments"
