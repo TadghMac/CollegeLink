@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Blog, Comment, Post
+from .models import Blog, User, Post, Activity, Comment
+# Register your models here
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Post)

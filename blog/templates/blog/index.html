@@ -26,6 +26,7 @@
     <!-- -----Stylesheet------- -->
     <link rel="stylesheet" href="/templates/css/style.css" type="text/css">
     <link rel="stylesheet" href="{% static 'django_summernote/summernote.css' %}"> 
+    <script src="{% static 'django_summernote/summernote-bs4.js' %}"></script>
     <title>CollegeLink</title>
 </head>
 
@@ -137,7 +138,7 @@
                 </div>
             </footer>
             
-<script src="{% static 'django_summernote/summernote-bs4.js' %}"></script>
+<script> $(document).ready(function() { $('#id_content').summernote(); // Replace 'id_content' with the actual ID of your Summernote field }); </script> 
 </body>
 </html>
 
