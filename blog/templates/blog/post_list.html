@@ -1,0 +1,15 @@
+{% for post in posts %}
+    <div>
+        <p>{{ post.content }}</p>
+        <p>{{ post.created_on }}</p>
+    </div>
+    
+{% endfor %}
+html
+Copy code
+<!-- create_post.html -->
+
+<form method="post">
+    {% csrf_token %}
+    <!-- Form fields for creating a new post -->
+</form>
