@@ -26,4 +26,6 @@ urlpatterns = [
     # path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
     path("", include("blog.urls"), name="blog-urls"),
     path('accounts/',include('allauth.urls')),
+    path('summernote/', include('django_summernote.urls')),
 ]
+

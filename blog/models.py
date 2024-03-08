@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-# from cloudinary.models import CloudinaryField
+from cloudinary.models import CloudinaryField
+from django_summernote.fields import SummernoteTextField
 
 # Create your models here.
 
@@ -51,7 +52,15 @@ class Comment(models.Model):
 
 
 
-class Blog(models.Model):
-    title = models.CharField(max_length=100)
-    # image = CloudinaryField('image', default='placeholder')
 
+
+
+
+#class Activity(models.Model):
+ #   author = models.ForeignKey(
+  #  User, on_delete=models.CASCADE, related_name="activity"
+   # )
+    #bio = models.TextField()
+    #reated_on = models.DateTimeField(auto_now_add=True)
+    #updated_on = models.DateTimeField(auto_now=True)
+    #type = models.IntegerField()
