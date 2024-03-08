@@ -1,15 +1,22 @@
 from django.db import models
 from django.contrib.auth.models import User
-from cloudinary.models import CloudinaryField
+# from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
-class User(models.Model):
+# class User(models.Model):
+#     first_name = models.CharField(max_length=100, unique=True)
+#     last_name = models.CharField(max_length=200)
+#     email = models.EmailField(max_length=150, unique=True)
+#     password = models.CharField(max_length=10, unique=True)
+    # Do we need a model for a profile?
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(blank=True)
     first_name = models.CharField(max_length=100, unique=True)
     last_name = models.CharField(max_length=200)
     email = models.EmailField(max_length=150, unique=True)
-    password = models.CharField(max_length=10, unique=True)
-    # Do we need a model for a profile?
 
 class Post(models.Model):
     author = models.ForeignKey(
@@ -21,7 +28,7 @@ class Post(models.Model):
     class Meta:
         ordering = ["-created_on"]
 
-class Activity(models.Model):
+class Event(models.Model):
     author = models.ForeignKey(
     User, on_delete=models.CASCADE, related_name="activity"
     )
@@ -46,5 +53,5 @@ class Comment(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
-    image = CloudinaryField('image', default='placeholder')
+    # image = CloudinaryField('image', default='placeholder')
 
